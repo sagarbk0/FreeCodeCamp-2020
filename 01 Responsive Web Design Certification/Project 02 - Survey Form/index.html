@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<html>
+  <body>
+  <div id="main">
+  <div id="first"></div>
+   <div id="second">
+  <h1 id="title">SpaceBass Feedback Form</h1>
+    <p id="description">We'd love to hear your feedback on our performance! Please enter it here.</p>
+    <form id="survey-form">
+  <label for="name" id="name-label">Name:</label><br>
+  <input type="text" id="name" placeholder="enter your name here" required><br>
+  <label for="email" id="email-label">Email:</label><br>
+  <input type="email" id="email" placeholder="enter your email here" required><br>
+  <label for="number" id="number-label">Age (optional)</label><br>
+  <input type="number" id="number" min="0" max="100" placeholder="0-100"><br><br>
+  <label for="dropdown">Which of the following best describes your involvement in the music industry?</label><br>
+  <select id="dropdown" required>
+    <option value="">--Please choose an option--</option>
+    <option value="1">Professional</option>
+    <option value="2">Hobbyist</option>
+    <option value="3">Amateur</option>
+    <option value="4">Student</option>
+  </select><br><br>
+      <label for="radio"> How interested would you be in attending our eConcert?</label><br>
+      <input type="radio" id="now" name="radio" value="a">
+      <label for="now"> Sign me up right now!</label><br>
+      <input type="radio" id="later" name="radio" value="b">
+      <label for="now"> I'll have to think about it.</label><br>
+      <input type="radio" id="no" name="radio" value="c">
+      <label for="no"> Sorry, I can't attend.</label><br><br>
+      <label for="checkbox">Which of the following performances did you like?</label><br>
+      <input type="checkbox" id="checkbox" value="a">
+      <label for="a">Earth Anthem</a><br>
+      <input type="checkbox" id="checkbox" value="b">
+      <label for="b">Mars Craze</a><br>
+      <input type="checkbox" id="checkbox" value="c">
+      <label for="c">Venus Fever</a><br>
+      <input type="checkbox" id="checkbox" value="d">
+      <label for="d">Mercury Hercules</a><br><br>
+      <label for="writehere">Any comments or suggestions?</label><br>
+      <textarea id="writehere" placeholder="Enter your comment here"></textarea><br><br>
+      <button id="submit">Submit</button>
+     </form>
+     <label>
+  </div>
+  </div>
+  </body>
+</html>

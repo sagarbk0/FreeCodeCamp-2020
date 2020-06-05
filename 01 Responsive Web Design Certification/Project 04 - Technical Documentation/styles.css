@@ -1,0 +1,22 @@
+header {
+  font-size: 30px;
+  font-family: "Georgia";
+}
+
+.main-section {
+  margin-left: 400px;
+}
+
+header#mainh {
+/*   text-align: center; */
+  font-size: 48px;
+}
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) {
+  nav#navbar {
+    margin-left: 0px;
+    position: fixed;
+  }
+}

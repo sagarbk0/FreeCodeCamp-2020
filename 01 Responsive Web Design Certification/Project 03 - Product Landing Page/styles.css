@@ -1,0 +1,26 @@
+@media only screen and (max-width: 600px) {
+  header#header {width: 8%}
+  .nav-link {font-size: 8px}
+}
+
+.watches {
+  width: 35%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+img#header-img {
+  width: 8%;
+}
+
+body {
+  background-color: hsl(144, 0%, 80%);
+  font-family: Bookman, URW Bookman L, serif;
+  font-variant: small-caps;
+}
+
+nav {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}

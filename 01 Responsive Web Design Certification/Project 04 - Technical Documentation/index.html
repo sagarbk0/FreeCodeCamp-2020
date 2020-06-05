@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<main id="main-doc">
+  <nav id="navbar">
+    <header id="mainh">C Documentation</header>
+    <a href="#Comments" class="nav-link">Comments</a><br>
+    <a href="#Expressions" class="nav-link">Expressions</a><br>
+    <a href="#Pointers_-_Arrays" class="nav-link">Pointers - Arrays</a><br>
+    <a href="#The_main_function" class="nav-link">The main function</a><br>
+    <a href="#Function_declaration" class="nav-link">Function declaration</a>
+  </nav><br>
+  <section class="main-section" id="Comments"> <header>Comments</header>
+    <p>Comments serve as a sort of in-code documentation. When inserted into a program, they are effectively ignored by the compiler; they are solely intended to be used as notes by the humans that read source code.</p>
+    <p>C-style comments are usually used to comment large blocks of text or small fragments of code; however, they can be used to comment single lines. To insert text as a C-style comment, simply surround the text with <code>/*</code> and <code>*/</code>. C-style comments tell the compiler to ignore all content between <code>/*</code> and <code>*/</code>. Although it is not part of the C standard, <code>/**</code> and <code>*/</code> are often used to indicate documentation blocks; this is legal because the second asterisk is simply treated as part of the comment.
+    </p>
+  </section>
+  <section class="main-section" id="Expressions">
+    <header>Expressions</header>
+    <p>An expression is a sequence of operators and their operands, that specifies a computation. Expression evaluation may produce a result (e.g., evaluation of <code>2+2</code> produces the result <code>4</code>), may generate side-effects (e.g. evaluation of <code>printf("%d",4)</code> sends the character '4' to the standard output stream), and may designate objects or functions.</p>
+    <p>Constant values of certain types may be embedded in the source code of a C program using specialized expressions known as literals (for lvalue expressions) and constants (for non-lvalue expressions):</p>
+    <ul>
+      <li>integer constants are decimal, octal, or hexadecimal numbers of integer type.</li>
+      <li>character constants are individual characters of type int suitable for conversion to a character type or of type char16_t, char32_t, (since C11)or wchar_t</li>
+      <li>floating constants are values of type float, double, or long double</li>
+      <li>string literals are sequences of characters of type char[], char16_t[], char32_t[], or wchar_t[] that represent null-terminated strings</li>
+      <li>compound literals are values of struct, union, or array type directly embedded in program code</li>
+    </ul>
+  </section>
+  <section class="main-section" id="Pointers_-_Arrays">
+    <header>Pointers - Arrays</header>
+    <p>Pointer is a type of an object that refers to a function or an object of another type, possibly adding qualifiers. Pointer may also refer to nothing, which is indicated by the special null pointer value.</p>
+    <p>Array is a type consisting of a contiguously allocated nonempty sequence of objects with a particular element type. The number of those objects (the array size) never changes during the array lifetime.</p>
+  </section>
+  <section class="main-section" id="The_main_function">
+    <header>The main function</header>
+    <p>Every C program coded to run in a hosted execution environment contains the definition (not the prototype) of a function called main, which is the designated start of the program.</p>
+    <p>The names argc and argv are arbitrary, as well as the representation of the types of the parameters: <code>int main(int ac, char** av)</code> is equally valid. A common implementation-defined form of main is <code>int main(int argc, char *argv[], char *envp[])</code>, where a third argument, of type char*[], points at an array of pointers to the host environment variables.</p>
+  </section>
+  <section class="main-section" id="Function_declaration">
+    <header>Function declaration</header>
+    <p>A function declaration introduces an identifier that designates a function and, optionally, specifies the types of the function parameters (the prototype). Function declarations (unlike definitions) may appear at block scope as well as file scope.</p>
+    <p>The return type of the function, determined by the type specifier in specifiers-and-qualifiers and possibly modified by the declarator as usual in declarations, must be a complete non-array object type or the type void.</p>
+  </section>
+</main>
