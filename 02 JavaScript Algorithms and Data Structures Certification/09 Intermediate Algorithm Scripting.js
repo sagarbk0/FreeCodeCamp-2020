@@ -192,46 +192,132 @@ function sumPrimes(num) {
   return sumPrimes;
 }
 
-// Smallest Common Multiple
+// Smallest Common Multiple (for range of numbers)
 function smallestCommons(arr) {
   if(arr[1]<arr[0]) {
-    let temp = arr[1];
-    arr[1] = arr[0];
-    arr[0] = temp;
+    let temp=arr[1];
+    arr[1]=arr[0];
+    arr[0]=temp;
   }
-  let i = arr[1]+1;
-  while(true) {
-    let notthisi = 0;
-    let count = 0;
-    // while(count<=(arr[1]-arr[0])) {
-    //   if(i%(arr[0]+count)==0) {
-    //     count++;
-    //   } else {
-    //     notthisi=1;
-    //     break;
-    //   }
-    // }
-    if(i%arr[0] == 0 && i%arr[1] == 0) {
-      if(i%arr[0]+1 == 0 && i%arr[1]-1 == 0) {
-      for (let j = arr[0]+2; j<arr[1]; j++) {
-        if (i%j!=0) {
-          notthisi = 1;
-          break;
-        }
+  let mul=1;
+  for(let i=arr[0]; i<=arr[1]; i++) {
+    mul*=i;
+  }
+  let i=2;
+  while(i<=arr[1]) {
+    let invalid=0;
+    for(let j=arr[0]; j<=arr[1]; j++) {
+      if((mul/i)%j!=0) {
+        invalid=1;
       }
-      }
-      else {
-        notthisi=1;
-      }
+    }
+    if(invalid==0) {
+      mul=mul/i;
     } else {
-      notthisi=1;
+      i++;
     }
-    if(notthisi==0) {
-      break;
-    }
-    i++;
   }
-  return i;
+  return mul;
 }
 
-console.log(smallestCommons([1,13]));
+// Drop It
+// Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
+
+function dropElements(arr, func) {
+  while(true) {
+    if(func(arr[0])==false) {
+      arr.shift();
+    } else {
+      break;
+    }
+  }
+  return arr;
+}
+
+// Binary Agents
+function binaryAgent(str) {
+  let arr = str.split(" ");
+  let valArr = [];
+  let excl='!';
+  for(let i=0; i<arr.length; i++) {
+    let num = 0;
+    for(let j=0; j<arr[i].length; j++) {
+      num+=arr[i][j]*Math.pow(2,arr[i].length-j-1);
+    }
+    valArr.push(String.fromCharCode((num)));
+  }
+  return valArr.join('');
+}
+
+// Everything Be True
+function truthCheck(collection, pre) {
+  let check = 0;
+  for(let i=0; i<collection.length; i++) {
+    if(collection[i][pre]==null || collection[i][pre]==0 || collection[i][pre]=="0" || !Boolean(collection[i][pre])) {
+      check = 1;
+    }
+  }
+  if(check == 0) {
+    return true;
+  }
+  return false;
+}
+
+// Arguments Optional
+function addTogether() {
+  if(arguments.length==1 && Number(arguments[0])===arguments[0]) {
+    let temp = arguments[0];
+    return function add2 () {
+      if (Number(arguments[0])!==arguments[0]) {
+        return undefined
+      } else {
+        return temp + arguments[0];
+      }
+    }
+  } else if(Number(arguments[0])!==arguments[0] || Number(arguments[1])!==arguments[1]) {
+    return undefined;
+  } else {
+    return arguments[0] + arguments[1];
+  }
+}
+
+// Make A Person
+var Person = function(firstAndLast) {
+  // Complete the method below and implement the others similarly
+  let arr = firstAndLast.split(" ");
+  this.getFullName = function() {
+    return arr[0] + " " + arr[1];
+  };
+  this.getFirstName = function() {
+    return arr[0];
+  }
+  this.getLastName = function() {
+    return arr[1];
+  }
+  this.setFirstName = function(first) {
+    arr[0] = first;
+  }
+  this.setLastName = function(last) {
+    arr[1] = last;
+  }
+  this.setFullName = function(full) {
+    let arr2 = full.split(" ");
+    arr[0] = arr2[0];
+    arr[1] = arr2[1];
+  }
+  return firstAndLast;
+};
+
+// Map the Debris
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  let ans = [];
+  arr.forEach(function(i){
+    let b = {};
+    b.name = i.name;
+    b.orbitalPeriod = Math.round(2*Math.PI*Math.sqrt(Math.pow(i.avgAlt+earthRadius,3)/GM));
+    ans.push(b);
+  });
+  return ans;
+}
